@@ -1,0 +1,392 @@
+/* ---------------------------------------------- */
+/*                  LOAD FONTS                    */
+/* ---------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* ---------------------------------------------- */
+/*                    GENERAL                     */
+/* ---------------------------------------------- */
+
+:root {
+  --red: #ff4f5b;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 0.8, 0.62, 1.52);
+  text-transform: capitalize;
+}
+
+*::selection {
+  background: var(--red);
+  color: #fff;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url(../img/bg1.jpg);
+  font-family: 'Roboto', sans-serif;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+.hide {
+  display: none;
+}
+.fadeIn {
+  animation: fade 0.5s ease-in-out;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* ---------------------------------------------- */
+/*                    HEADER                      */
+/* ---------------------------------------------- */
+/* header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* max-width: 1800px; */
+/* width: 100%;
+  margin: 0 auto;
+  background-color: #010102;
+} */
+/* -------- LOGO -------- */
+header {
+  width: 100%;
+  /* background: #fff; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 2.5rem 7%;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+  font-size: 2.5rem;
+  color: #eee;
+}
+
+header .logo span {
+  color: var(--red);
+}
+
+header .navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+header .navbar ul li {
+  margin-left: 2.5rem;
+}
+
+header .navbar ul li a {
+  color: #eee;
+  font-size: 2rem;
+}
+
+header .navbar ul li a.active,
+header .navbar ul li a:hover {
+  color: var(--red);
+  border-bottom: 0.2rem solid var(--red);
+  padding: 0.7rem 0;
+}
+
+#menu {
+  font-size: 3rem;
+  color: #999;
+  cursor: pointer;
+  display: none;
+}
+/* .logo {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.logo img {
+  width: 60px;
+}
+.logo p {
+  font-weight: bold;
+  color: #6a149b;
+} */
+/* -------- NAV -------- */
+
+/* .navbar ul {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul li {
+  list-style: none;
+}
+
+.navbar ul li:last-child {
+  padding-right: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #6a149b;
+  padding: 10px;
+} */
+/* ---------------------------------------------- */
+/*                      MAIN                      */
+/* ---------------------------------------------- */
+
+main {
+  /* margin: 0 auto; */
+  /* min-height: 100vh; */
+  padding: 0 4%;
+  padding-top: 9rem;
+}
+
+/* -------- BG IMAGE -------- */
+
+.stats {
+  width: 100%;
+  /* height: 800px; */
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url(../img/bg1.jpg); */
+  /* background: #222; */
+}
+
+/* -------- LATEST REPORT -------- */
+.latest-report {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 50px;
+  color: #fff;
+}
+
+.country,
+.total-cases,
+.recovered,
+.deaths {
+  height: 100px;
+}
+
+.name {
+  font-size: 3rem;
+  /* color: #be64f1; */
+  /* color: #999; */
+  color: var(--red);
+
+  font-weight: bold;
+}
+
+.change-country {
+  cursor: pointer;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.total-cases .value {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.recovered .value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #009688;
+}
+.deaths .value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f44336;
+}
+
+.new-value {
+  font-size: 1.6rem;
+}
+/* -------- CHART -------- */
+.chart {
+  width: 80%;
+  height: 70vh;
+  min-height: 500px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+/* -------- SEARCH COUNTRY -------- */
+.search-country {
+  position: relative;
+  top: 10px;
+}
+.search-box {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+  height: 30px;
+  z-index: 1;
+  background-color: #111;
+}
+
+.search-box input {
+  width: 360px;
+  height: 25px;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  padding-left: 15px;
+  font-size: 1.1em;
+}
+
+.search-box img {
+  width: 20px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.country-list {
+  display: flex;
+  position: absolute;
+  top: 30px;
+  width: 400px;
+  height: 300px;
+  background-color: #111;
+  opacity: 0.9;
+  overflow-y: scroll;
+}
+
+.country-list ul {
+  width: 100%;
+}
+
+.country-list ul li {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px;
+  color: #fff;
+}
+.country-list ul li:hover {
+  border-left: 1px solid #fff;
+}
+
+/* SCROLL BAR */
+/* width */
+.country-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.country-list::-webkit-scrollbar-track {
+  background: #111;
+}
+
+/* Handle */
+.country-list::-webkit-scrollbar-thumb {
+  background: #f1f1f1;
+}
+
+/* Handle on hover */
+.country-list::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+/* ---------------------------------------------- */
+/*                    FOOTER                      */
+/* ---------------------------------------------- */
+.footer {
+  height: 60px;
+  margin: 0 auto;
+  background-color: #111;
+}
+
+.footer-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.copyright {
+  height: 100%;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #eee;
+}
+/* ---------------------------------------------- */
+/*             SCREEN WIDTH < 600px               */
+/* ---------------------------------------------- */
+
+@media screen and (max-width: 991px) {
+  html {
+    font-size: 55.5%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search-box {
+    /* width: 400px;
+    height: 30px; */
+    width: 150px;
+    height: 10px;
+  }
+
+  .search-box input {
+    /* width: 360px;
+    height: 25px; */
+    width: 100px;
+    height: 8px;
+  }
+
+  .search-box img {
+    /* width: 20px; */
+    width: 10px;
+  }
+
+  .country-list {
+    /* width: 400px;
+    height: 300px; */
+    width: 150px;
+    height: 50px;
+  }
+  .latest-report {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  /* .search-country {
+    display: flex;
+  } */
+}
+@media screen and (max-width: 600px) {
+  .chart {
+    width: 90%;
+    height: 50vh;
+    /* min-height: 500px;
+    margin: 0 auto;
+    padding: 50px 0; */
+  }
+}
