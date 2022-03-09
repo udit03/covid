@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="resources/css/chart-style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <title>Covid Tracker</title>
+  </head>
+  <body>
+    <header>
+      <a href="./index.html" class="logo"
+        >c<span class="fas fa-virus"></span>vID-19</a
+      >
+
+      <div id="menu" class="fas fa-bars"></div>
+
+      <nav class="navbar">
+        <ul>
+          <li><a href="./index.html">home</a></li>
+          <!-- <li><a href="#protect">protect</a></li>
+          <li><a href="#symptoms">symptoms</a></li>
+          <li><a href="#prevent">prevent</a></li>
+          <li><a href="#handwash">handwash</a></li>
+          <li><a href="#spread">spread</a></li>
+          <li><a href="./chart.html">Live Stats</a></li> -->
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="stats">
+        <div class="latest-report">
+          <div class="country">
+            <div class="name">Loading...</div>
+            <div class="change-country">Change</div>
+            <div class="search-country hide">
+              <div class="search-box">
+                <input
+                  type="text"
+                  id="search-input"
+                  placeholder="Search Country"
+                />
+                <img class="close" src="./resources/img/close.svg" alt="" />
+              </div>
+              <div class="country-list"></div>
+            </div>
+          </div>
+
+          <div class="total-cases">
+            <div class="title">Total Cases</div>
+            <div class="value">0</div>
+            <div class="new-value">+0</div>
+          </div>
+          <div class="recovered">
+            <div class="title">Recovered</div>
+            <div class="value">0</div>
+            <div class="new-value">+0</div>
+          </div>
+          <div class="deaths">
+            <div class="title">Deaths</div>
+            <div class="value">0</div>
+            <div class="new-value">+0</div>
+          </div>
+        </div>
+        <div class="chart">
+          <canvas id="axes_linear_chart"></canvas>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="copyright">
+          <p>Copyright &copy; 2021 Udit Mishra</p>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+      integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI="
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script> -->
+    <script src="./resources/js/app.js"></script>
+    <script src="./resources/js/countries.js"></script>
+  </body>
+</html>
